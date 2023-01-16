@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import random
 import argparse
+import pickle
 
 # sklearn package for data preparation
 from sklearn.preprocessing import StandardScaler
@@ -99,7 +100,11 @@ def preprocessing(df):
     X_train = scaler.fit_transform(X_train)
     X_val = scaler.transform(X_val)
     X_test = scaler.transform(X_test)
-    
+    # save scaler
+    with open('scaler.bin', 'wb') as f_out:
+        pickle.dump(scaler, f_out)
+
+
     return X_train, X_val, X_test, y_train, y_val, y_test
 
 def train(model, device, train_dataloader, optimizer, criterion, epoch, print_every):
@@ -249,6 +254,7 @@ def valid(model, device, val_dataloader, criterion):
                ({100. * correct/len(val_dataloader.dataset):.0f}%)')
         
     return predictions, epoch_accuracy, val_loss, epoch_recall, epoch_precision
+
 
 def main(args):
     # set device

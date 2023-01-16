@@ -1,1 +1,3 @@
 water_model_weights.pth
+scaler.bin
+__pycache__/*
