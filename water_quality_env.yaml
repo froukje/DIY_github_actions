@@ -1,0 +1,18 @@
+name: water_quality_env
+
+channels:
+  - default
+  - anaconda
+dependencies:
+  - python=3.9
+  - pytest
+  - pylint
+  - black
+  - isort
+  - numpy
+  - pandas
+  - scikit-learn
+  - pip
+  - pip:
+    - torch
+    - pre-commit

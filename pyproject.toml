@@ -1,0 +1,20 @@
+[tool.pylint.messages_control]
+
+disable = [
+	"no-member",
+	"invalid-name",
+	"missing-function-docstring",
+	"too-many-locals",
+	"too-many-arguments",
+	"redefined-outer-name",
+	"unused-variable",
+	"missing-module-docstring",
+	"too-few-public-methods"
+	]
+
+[tool.black]
+line-length = 88
+skip-string-normlization = true
+
+[tool.isort]
+profile = "black"
