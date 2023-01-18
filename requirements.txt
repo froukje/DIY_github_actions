@@ -1,0 +1,10 @@
+python=3.9
+pytest
+pylint
+black
+isort
+numpy
+pandas
+scikit-learn
+torch
+pre-commit
