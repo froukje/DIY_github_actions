@@ -1,9 +1,9 @@
 name: lint python
-#run_name: ${{ github.actor }} is linting python code
-#on: [push]
-#jobs:
-#  run-linter:
-#    runs-on: ubuntu-latest
+run_name: ${{ github.actor }} is linting python code
+on: [push]
+jobs:
+  run-linter:
+    runs-on: ubuntu-latest
 #    strategy:
 #      matrix:
 #        python-version: ["3.7", "3.8", "3.9", "3.10"]
