@@ -20,4 +20,4 @@ jobs:
           pip install pylint
       - name: Run Linters
         run: |
-          pylint --recursive=y $(git ls-files '*.py')
+          pylint --recursive=y .
