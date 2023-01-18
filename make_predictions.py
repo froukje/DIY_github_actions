@@ -19,7 +19,7 @@ features = [
 
 
 def preprocessing(features):
-    with open("/home/frauke/DIY_github_actions/scaler.bin", "rb") as f:
+    with open("scaler.bin", "rb") as f:
         scaler = pickle.load(f)
 
     df = pd.DataFrame([features])
@@ -30,9 +30,7 @@ def preprocessing(features):
 def predict(x):
 
     model = WaterNet()
-    model.load_state_dict(
-        torch.load("/home/frauke/DIY_github_actions/water_model_weights.pth")
-    )
+    model.load_state_dict(torch.load("water_model_weights.pth"))
     model.eval()
 
     x = torch.from_numpy(x).float()

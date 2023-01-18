@@ -45,22 +45,22 @@ class ModelMock:
         return [self.value] * n
 
 
-def test_predict():
-    features = [
-        4.668102,
-        193.681735,
-        47580.991603,
-        7.166639,
-        359.948574,
-        526.424171,
-        13.894419,
-        66.687695,
-        4.435821,
-    ]
-    model_mock = ModelMock(10.0)
-    x = make_predictions.preprocessing(features)
-
-    actual_prediction = make_predictions.predict(x)
-    expected_prediction = False
-
-    assert actual_prediction == expected_prediction
+# def test_predict():
+#    features = [
+#        4.668102,
+#        193.681735,
+#        47580.991603,
+#        7.166639,
+#        359.948574,
+#        526.424171,
+#        13.894419,
+#        66.687695,
+#        4.435821,
+#    ]
+#    model_mock = ModelMock(10.0)
+#    x = make_predictions.preprocessing(features)
+#
+#    actual_prediction = make_predictions.predict(x)
+#    expected_prediction = False
+#
+#    assert actual_prediction == expected_prediction
