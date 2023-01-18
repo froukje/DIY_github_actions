@@ -1,6 +1,6 @@
 import numpy as np
 
-from make_predictions import preprocessing
+import make_predictions
 
 
 def test_preprosessing():
@@ -16,7 +16,7 @@ def test_preprosessing():
         4.435821,
     ]
 
-    actual_preprocessed = preprocessing(features)
+    actual_preprocessed = make_predictions.preprocessing(features)
     expected_preprocessed = np.array(
         [
             -1.69398477e00,
@@ -34,33 +34,33 @@ def test_preprosessing():
     assert np.all(actual_preprocessed) == np.all(expected_preprocessed)
 
 
-# class ModelMock:
-#    """pseudo-model for testing"""
-#
-#    def __init__(self, value):
-#        self.value = value
-#
-#    def predict(self, X):
-#        n = len(X)
-#        return [self.value] * n
+class ModelMock:
+    """pseudo-model for testing"""
+
+    def __init__(self, value):
+        self.value = value
+
+    def predict(self, X):
+        n = len(X)
+        return [self.value] * n
 
 
-# def test_predict():
-#    features = [
-#        4.668102,
-#        193.681735,
-#        47580.991603,
-#        7.166639,
-#        359.948574,
-#        526.424171,
-#        13.894419,
-#        66.687695,
-#        4.435821,
-#    ]
-#    model_mock = ModelMock(10.0)
-#    x = make_predictions.preprocessing(features)
-#
-#    actual_prediction = make_predictions.predict(x)
-#    expected_prediction = False
-#
-#    assert actual_prediction == expected_prediction
+def test_predict():
+    features = [
+        4.668102,
+        193.681735,
+        47580.991603,
+        7.166639,
+        359.948574,
+        526.424171,
+        13.894419,
+        66.687695,
+        4.435821,
+    ]
+    model_mock = ModelMock(10.0)
+    x = make_predictions.preprocessing(features)
+
+    actual_prediction = make_predictions.predict(x)
+    expected_prediction = False
+
+    assert actual_prediction == expected_prediction
