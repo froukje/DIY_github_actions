@@ -34,15 +34,15 @@ def test_preprosessing():
     assert np.all(actual_preprocessed) == np.all(expected_preprocessed)
 
 
-class ModelMock:
-    """pseudo-model for testing"""
-
-    def __init__(self, value):
-        self.value = value
-
-    def predict(self, X):
-        n = len(X)
-        return [self.value] * n
+# class ModelMock:
+#    """pseudo-model for testing"""
+#
+#    def __init__(self, value):
+#        self.value = value
+#
+#    def predict(self, X):
+#        n = len(X)
+#        return [self.value] * n
 
 
 # def test_predict():
