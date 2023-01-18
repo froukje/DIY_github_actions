@@ -1,6 +1,6 @@
 import numpy as np
 
-import make_predictions
+from make_predictions import preprocessing
 
 
 def test_preprosessing():
@@ -16,7 +16,7 @@ def test_preprosessing():
         4.435821,
     ]
 
-    actual_preprocessed = make_predictions.preprocessing(features)
+    actual_preprocessed = preprocessing(features)
     expected_preprocessed = np.array(
         [
             -1.69398477e00,
